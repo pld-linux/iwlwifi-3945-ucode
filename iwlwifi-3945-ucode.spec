@@ -13,10 +13,9 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The file iwlwifi-3945.ucode provided in this package is required to be
-present on your system in order for the Intel PRO/Wireless 3945ABG/BG
-Network Connection Adapter driver for Linux (iwlwifi-3945) to be able
-to operate on your system.
+The file provided in this package is required to be present on your system
+in order for the Intel PRO/Wireless 3945ABG/BG Network Connection Adapter
+driver for Linux (iwlwifi-%{_module}) to be able to operate on your system.
 
 On adapter initialization, and at varying times during the uptime of
 the adapter, the microcode is loaded into the RAM on the network
@@ -27,10 +26,9 @@ can be used to keep the host from having to handle packets that are
 not of interest given the current operating mode of the device.
 
 %description -l pl.UTF-8
-Plik iwlwifi-3945.ucode dostarczany przez ten pakiet jest wymagany w
-systemie do działania linuksowego sterownika dla układów
-bezprzewodowych Intel PRO/Wireless 3945ABG/BG Network Connection
-Adapter (iwlwifi-3945).
+Plik dostarczany przez ten pakiet jest wymagany w systemie do działania
+linuksowego sterownika dla układów bezprzewodowych Intel PRO/Wireless
+3945ABG/BG Network Connection Adapter (iwlwifi-%{_module}).
 
 Przy inicjalizacji układu i w różnych chwilach w trakcie jego
 działania mikrokod jest wczytywany do pamięci RAM układu. Mikrokod
