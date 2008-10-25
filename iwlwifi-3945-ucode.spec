@@ -2,12 +2,12 @@ Summary:	Microcode image for Intel PRO/Wireless 3945ABG/BG Network Connection Ad
 Summary(pl.UTF-8):	Obraz mikrokodu dla układów bezprzewodowych Intel PRO/Wireless 3945ABG/BG
 %define	_module	3945
 Name:		iwlwifi-%{_module}-ucode
-Version:	2.14.1.5
+Version:	15.28.1.8
 Release:	1
 License:	distributable
 Group:		Base/Kernel
 Source0:	http://www.intellinuxwireless.org/iwlwifi/downloads/%{name}-%{version}.tgz
-# Source0-md5:	a8122d3e026561055f488dc654ccfcd1
+# Source0-md5:	e793b43b2ef96f8b2605bfee03d78622
 URL:		http://www.intellinuxwireless.org/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
