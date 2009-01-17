@@ -1,6 +1,7 @@
 Summary:	Microcode image for Intel PRO/Wireless 3945ABG/BG Network Connection Adapter
 Summary(pl.UTF-8):	Obraz mikrokodu dla układów bezprzewodowych Intel PRO/Wireless 3945ABG/BG
 %define	_module	3945
+%define	version1	15.28.1.8
 Name:		iwlwifi-%{_module}-ucode
 Version:	15.28.2.8
 Release:	1
@@ -8,6 +9,8 @@ License:	distributable
 Group:		Base/Kernel
 Source0:	http://www.intellinuxwireless.org/iwlwifi/downloads/%{name}-%{version}.tgz
 # Source0-md5:	d28cf1697da981c3f11f3420af6a40c8
+Source1:	http://www.intellinuxwireless.org/iwlwifi/downloads/%{name}-%{version1}.tgz
+# Source1-md5:	e793b43b2ef96f8b2605bfee03d78622
 URL:		http://www.intellinuxwireless.org/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,13 +42,14 @@ pakietów, zapobiegające docieraniu do komputera pakietów
 niepotrzebnych w danym trybie pracy urządzenia.
 
 %prep
-%setup -q
+%setup -q -a 1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/lib/firmware
 
 install iwlwifi-%{_module}-2.ucode $RPM_BUILD_ROOT/lib/firmware
+install %{name}-%{version1}/iwlwifi-%{_module}-1.ucode $RPM_BUILD_ROOT/lib/firmware
 install LICENSE.%{name} $RPM_BUILD_ROOT/lib/firmware/%{name}-LICENSE
 
 %clean
