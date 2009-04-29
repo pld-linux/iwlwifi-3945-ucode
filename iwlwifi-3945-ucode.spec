@@ -3,12 +3,12 @@ Summary(pl.UTF-8):	Obraz mikrokodu dla układów bezprzewodowych Intel PRO/Wirel
 %define	_module	3945
 %define	version1	15.28.1.8
 Name:		iwlwifi-%{_module}-ucode
-Version:	15.28.2.8
+Version:	15.32.2.9
 Release:	1
 License:	distributable
 Group:		Base/Kernel
 Source0:	http://www.intellinuxwireless.org/iwlwifi/downloads/%{name}-%{version}.tgz
-# Source0-md5:	d28cf1697da981c3f11f3420af6a40c8
+# Source0-md5:	d99a75ab1305d1532a09471b2f9a547a
 Source1:	http://www.intellinuxwireless.org/iwlwifi/downloads/%{name}-%{version1}.tgz
 # Source1-md5:	e793b43b2ef96f8b2605bfee03d78622
 URL:		http://www.intellinuxwireless.org/
@@ -50,13 +50,11 @@ install -d $RPM_BUILD_ROOT/lib/firmware
 
 install iwlwifi-%{_module}-2.ucode $RPM_BUILD_ROOT/lib/firmware
 install %{name}-%{version1}/iwlwifi-%{_module}-1.ucode $RPM_BUILD_ROOT/lib/firmware
-install LICENSE.%{name} $RPM_BUILD_ROOT/lib/firmware/%{name}-LICENSE
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.%{name}
-/lib/firmware/%{name}-LICENSE
+%doc LICENSE.%{name} README.%{name}
 /lib/firmware/*.ucode
