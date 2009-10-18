@@ -1,8 +1,8 @@
+%define		module		3945
+%define		version1	15.28.1.8
 Summary:	Microcode image for Intel PRO/Wireless 3945ABG/BG Network Connection Adapter
 Summary(pl.UTF-8):	Obraz mikrokodu dla układów bezprzewodowych Intel PRO/Wireless 3945ABG/BG
-%define	_module	3945
-%define	version1	15.28.1.8
-Name:		iwlwifi-%{_module}-ucode
+Name:		iwlwifi-%{module}-ucode
 Version:	15.32.2.9
 Release:	1
 License:	distributable
@@ -16,9 +16,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The file provided in this package is required to be present on your system
-in order for the Intel PRO/Wireless 3945ABG/BG Network Connection Adapter
-driver for Linux (iwlwifi-%{_module}) to be able to operate on your system.
+The file provided in this package is required to be present on your
+system in order for the Intel PRO/Wireless 3945ABG/BG Network
+Connection Adapter driver for Linux (iwlwifi-%{module}) to be able to
+operate on your system.
 
 On adapter initialization, and at varying times during the uptime of
 the adapter, the microcode is loaded into the RAM on the network
@@ -29,9 +30,10 @@ can be used to keep the host from having to handle packets that are
 not of interest given the current operating mode of the device.
 
 %description -l pl.UTF-8
-Plik dostarczany przez ten pakiet jest wymagany w systemie do działania
-linuksowego sterownika dla układów bezprzewodowych Intel PRO/Wireless
-3945ABG/BG Network Connection Adapter (iwlwifi-%{_module}).
+Plik dostarczany przez ten pakiet jest wymagany w systemie do
+działania linuksowego sterownika dla układów bezprzewodowych Intel
+PRO/Wireless 3945ABG/BG Network Connection Adapter
+(iwlwifi-%{module}).
 
 Przy inicjalizacji układu i w różnych chwilach w trakcie jego
 działania mikrokod jest wczytywany do pamięci RAM układu. Mikrokod
@@ -43,13 +45,13 @@ niepotrzebnych w danym trybie pracy urządzenia.
 
 %prep
 %setup -q -a 1
+mv %{name}-%{version1}/* .
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/lib/firmware
-
-install iwlwifi-%{_module}-2.ucode $RPM_BUILD_ROOT/lib/firmware
-install %{name}-%{version1}/iwlwifi-%{_module}-1.ucode $RPM_BUILD_ROOT/lib/firmware
+cp -a iwlwifi-%{module}-1.ucode $RPM_BUILD_ROOT/lib/firmware
+cp -a iwlwifi-%{module}-2.ucode $RPM_BUILD_ROOT/lib/firmware
 
 %clean
 rm -rf $RPM_BUILD_ROOT
