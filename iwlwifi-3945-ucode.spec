@@ -1,10 +1,11 @@
+# NOTE: currently it's included in linux-firmware.spec
 %define		module		3945
 %define		version1	15.28.1.8
 Summary:	Microcode image for Intel PRO/Wireless 3945ABG/BG Network Connection Adapter
 Summary(pl.UTF-8):	Obraz mikrokodu dla układów bezprzewodowych Intel PRO/Wireless 3945ABG/BG
 Name:		iwlwifi-%{module}-ucode
 Version:	15.32.2.9
-Release:	1
+Release:	1.1
 License:	distributable
 Group:		Base/Kernel
 Source0:	http://www.intellinuxwireless.org/iwlwifi/downloads/%{name}-%{version}.tgz
