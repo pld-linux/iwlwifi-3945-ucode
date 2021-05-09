@@ -45,7 +45,7 @@ niepotrzebnych w danym trybie pracy urządzenia.
 
 %prep
 %setup -q -a 1
-mv %{name}-%{version1}/* .
+%{__mv} %{name}-%{version1}/* .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -59,4 +59,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE.%{name} README.%{name}
-/lib/firmware/*.ucode
+/lib/firmware/iwlwifi-3945-*.ucode
